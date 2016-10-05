@@ -1,0 +1,70 @@
+svg {
+	margin: 7vmin;
+	width: 85vmin;
+	height: 85vmin;
+	overflow: hidden;
+}
+
+path {
+	fill: #ffffff;
+	stroke: #dddddd;
+	stroke-width: 0.1;
+}
+
+#rotationIndicator {
+	fill: none;
+	stroke-width: 2;
+}
+
+#previews g {
+	display: none;
+}
+
+.cell.none {
+	fill: #ffffff;
+}
+.cell.square, #previews #square rect {
+	fill: #f1ac00;
+}
+.cell.rightS, #previews #rightS rect {
+	fill: #0000bc;
+}
+.cell.rightZ, #previews #rightZ rect {
+	fill: #8d0027;
+}
+.cell.slat, #previews #slat rect {
+	fill: #008800;
+}
+.cell.trapezium, #previews #trapezium rect {
+	fill: #dc0082;
+}
+.cell.rightL, #previews #rightL rect {
+	fill: #1fb9d7;
+}
+.cell.mirrorL, #previews #mirrorL rect {
+	fill: #ff0000;
+}
+
+#pause, #gameOver {
+	display: none;
+}
+
+#pause.isPaused, #gameOver.isGameOver {
+	display: block;
+}
+
+#pause circle, #pause text, #gameOver circle, #gameOver text {
+	fill: #ffffff;
+	stroke: black;
+	stroke-width: 0.2;
+	font-family: "Carousel", webfont-carousel;
+}
+
+#gameOver circle {
+	opacity: 0.5;
+	stroke: none;
+}
+
+#gameOver text {
+	opacity: 0.8;
+}

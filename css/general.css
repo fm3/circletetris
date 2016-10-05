@@ -1,0 +1,39 @@
+html, body {
+	margin:0;
+	padding: 0;
+}
+
+noscript {
+	font-size: 50pt;
+	padding: 15vmin;
+	display: block;
+}
+
+h1 {
+	font-family: "Carousel", webfont-carousel;
+	color: #fafafa;
+	text-shadow: 0 0 2pt black,0 0 2pt black, 0 0 10pt rgba(0,0,0,0.5);
+	font-weight: normal;
+	font-size: 7vh;
+	position:absolute;
+	right:25pt;
+	top:-8pt;
+	text-align: right;
+	line-height: 1em;
+	padding: 0;
+}
+
+h1 .kern {
+	font-size: 4pt;
+	font-family: serif;
+}
+
+@media all and (orientation:portrait) {
+	h1 {
+		font-size: 6vw;
+		width: 100%;
+		right: 0;
+		left: 0;
+		text-align: center;
+	}
+}

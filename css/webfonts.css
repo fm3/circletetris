@@ -1,0 +1,16 @@
+@font-face
+{
+	font-family: webfont-pusab;
+	font-style: normal;
+	font-weight: normal;
+	src: local('Pusab'), url('../assets/pusab.ttf');
+}
+
+@font-face
+{
+	font-family: webfont-carousel;
+	font-style: normal;
+	font-weight: normal;
+	src: local('Carousel'), url('../assets/carousel.ttf');
+}
+

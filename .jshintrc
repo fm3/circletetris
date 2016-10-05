@@ -1,0 +1,18 @@
+{
+	"browser": true,
+	"devel": true,
+	"unused": false,
+	"sub": true,
+	"-W100": true,
+	"globals": {
+		"fieldView": true,
+		"gamePlay": true,
+		"keyboardControls": true,
+		"popups": true,
+		"scoreDisplay": true,
+		"screenControls": true,
+		"config": true,
+		"highscores": true,
+		"$": true
+	}
+}

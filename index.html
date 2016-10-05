@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:svg="http://www.w3.org/2000/svg">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="author" content="Florian Meinel"/>
+		<title>Awesome Circle Tetris</title>
+		<link rel="stylesheet" href="css/general.css" type="text/css" />
+		<link rel="stylesheet" href="css/field.css" type="text/css" />
+		<link rel="stylesheet" href="css/controls.css" type="text/css" />
+		<link rel="stylesheet" href="css/popups.css" type="text/css" />
+		<link rel="stylesheet" href="css/webfonts.css" type="text/css" />
+		<meta name="viewport" content="width=device-width, initial-scale=0.6, user-scalable=0">
+		<link rel="shortcut icon" type="image/x-icon" href="assets/favicon.png" />
+
+		<script src="js/main.js"></script>
+		<script src="js/config.js"></script>
+		<script src="js/fieldView.js"></script>
+		<script src="js/scoreDisplay.js"></script>
+		<script src="js/popups.js"></script>
+		<script src="js/keyboardControls.js"></script>
+		<script src="js/screenControls.js"></script>
+		<script src="js/gamePlay.js"></script>
+		<script src="js/highscores.js"></script>
+
+	</head>
+
+	<body>
+
+		<h1>Awesome Ci<span class="kern">  </span>r<span class="kern">   </span>cle Tet<span class="kern">  </span>r<span class="kern">   </span>is</h1>
+		<noscript>To play Circle Tetris, please enable JavaScript.</noscript>
+
+		<div id="scoreBox">
+			<span id="score"></span>
+			<span id="scoreLabel"></span>
+		</div>
+
+		<div id="screenControls">
+			<div id="arrowButtons">
+				<button id="upButton">↑</button>
+				<br />
+				<button id="leftButton">←</button>
+				<button id="downButton">↓</button>
+				<button id="rightButton">→</button>
+			</div>
+			<button id="newGameButton"><span class="shortcut">N</span>ew Game</button>
+			<button id="pauseButton"><span class="shortcut">P</span>ause</button>
+			<button id="aboutButton"><span class="shortcut">A</span>bout</button>
+			<button id="highScoresButton"><span class="shortcut">H</span>igh Scores</button>
+		</div>
+
+		<svg xmlns="http://www.w3.org/2000/svg" version="1.1"
+		 viewBox="0 0 100 100"
+		 preserveAspectRatio="xMidYMid slice">
+
+			<linearGradient id="rotationGradient" gradientUnits="userSpaceOnUse"
+											 x1="45" x2="55">
+				<stop
+					id="stop3759"
+					style="stop-color:#000000;stop-opacity:1"
+					offset="0"></stop>
+				<stop
+					id="stop3761"
+					style="stop-color:#00b000;stop-opacity:1"
+					offset="1"></stop>
+			</linearGradient>
+
+			<circle id="rotationIndicator" cx="50" cy="50" r="48" stroke="url(#rotationGradient)"></circle>
+
+			<g id="cells">
+				<!-- to be filled by js -->
+			</g>
+
+			<g id="previews">
+
+				<g id="square">
+					<rect x='49' y='49' width="1" height="1"></rect>
+					<rect x='49' y='50' width="1" height="1"></rect>
+					<rect x='50' y='49' width="1" height="1"></rect>
+					<rect x='50' y='50' width="1" height="1"></rect>
+				</g>
+
+				<g id="rightS">
+					<rect x='49' y='48.5' width="1" height="1"></rect>
+					<rect x='49' y='49.5' width="1" height="1"></rect>
+					<rect x='50' y='49.5' width="1" height="1"></rect>
+					<rect x='50' y='50.5' width="1" height="1"></rect>
+				</g>
+
+				<g id="rightZ">
+					<rect x='49' y='50.5' width="1" height="1"></rect>
+					<rect x='49' y='49.5' width="1" height="1"></rect>
+					<rect x='50' y='49.5' width="1" height="1"></rect>
+					<rect x='50' y='48.5' width="1" height="1"></rect>
+				</g>
+
+				<g id="slat">
+					<rect x='48' y='49.5' width="1" height="1"></rect>
+					<rect x='49' y='49.5' width="1" height="1"></rect>
+					<rect x='50' y='49.5' width="1" height="1"></rect>
+					<rect x='51' y='49.5' width="1" height="1"></rect>
+				</g>
+
+				<g id="trapezium">
+					<rect x='49.5' y='49' width="1" height="1"></rect>
+					<rect x='48.5' y='50' width="1" height="1"></rect>
+					<rect x='49.5' y='50' width="1" height="1"></rect>
+					<rect x='50.5' y='50' width="1" height="1"></rect>
+				</g>
+
+				<g id="rightL">
+					<rect x='50.5' y='49' width="1" height="1"></rect>
+					<rect x='48.5' y='50' width="1" height="1"></rect>
+					<rect x='49.5' y='50' width="1" height="1"></rect>
+					<rect x='50.5' y='50' width="1" height="1"></rect>
+				</g>
+
+				<g id="mirrorL">
+					<rect x='50' y='48.5' width="1" height="1"></rect>
+					<rect x='50' y='49.5' width="1" height="1"></rect>
+					<rect x='50' y='50.5' width="1" height="1"></rect>
+					<rect x='49' y='50.5' width="1" height="1"></rect>
+				</g>
+			</g>
+
+			<g id="pause">
+				<circle cx="50" cy="50" r="49"></circle>
+				<text text-anchor="middle" x="26.0" y="56" font-size="23">P</text>
+				<text text-anchor="middle" x="38.3" y="56" font-size="23">a</text>
+				<text text-anchor="middle" x="51.9" y="56" font-size="23">u</text>
+				<text text-anchor="middle" x="64.7" y="56" font-size="23">s</text>
+				<text text-anchor="middle" x="76.0" y="56" font-size="23">e</text>
+			</g>
+
+			<g id="gameOver">
+				<circle cx="50" cy="50" r="49"></circle>
+				<text text-anchor="middle" x="24" y="48" font-size="23">G</text>
+				<text text-anchor="middle" x="39.2" y="48" font-size="23">a</text>
+				<text text-anchor="middle" x="57" y="48" font-size="23">m</text>
+				<text text-anchor="middle" x="73" y="48" font-size="23">e</text>
+				<text text-anchor="middle" x="38.3" y="67" font-size="23">O</text>
+				<text text-anchor="middle" x="53" y="67" font-size="23">v</text>
+				<text text-anchor="middle" x="65" y="67" font-size="23">e</text>
+				<text text-anchor="middle" x="77" y="67" font-size="23">r</text>
+			</g>
+
+		</svg>
+
+
+
+		<div id="popup-backdrop"></div>
+		<div id="popup-blend-top"></div>
+		<div id="popup-blend-bottom"></div>
+		<button id="popup-close-button">×</button>
+
+		<div id="about" class="popup">
+
+			<div class="popup-content">
+				<h2>Awesome Circle Tetris – Game Instructions</h2>
+				<p><em>Awesome Circle Tetris</em> is similar to standard Tetris, but you rotate the circle instead of moving the brick left or right.</p>
+
+				<h3>Controls</h3>
+
+				<table>
+					<tr><td>N</td>	 <td>New game</td></tr>
+					<tr><td>→</td>	 <td>Rotate circle</td></tr>
+					<tr><td>←</td>	 <td>Rotate circle</td></tr>
+					<tr><td>↑</td>	 <td>Rotate brick by 90 degrees</td></tr>
+					<tr><td>↓</td>	 <td>Move brick down</td></tr>
+					<tr><td>P</td>	 <td>Pause/resume</td></tr>
+					<tr><td>Esc</td> <td>Close this pop-up</td></tr>
+				</table>
+
+				<h3>Instructions</h3>
+				<p><em>Awesome Circle Tetris</em> is based on the 1984 Russian video game <em>Tetris</em>. Bricks consisting of four »squares« fall from the center. They can be rotated by 90 degrees. The aim is to fill the outer »rings« without gaps. The bricks of completed rings will vanish, making space for more bricks. The more rings you erase in one go, the more points you score:</p>
+
+				<table>
+					<tr><td>1 Ring</td><td>–</td><td>1 Point</td></tr>
+					<tr><td>2 Rings</td><td>–</td><td>8 Points</td></tr>
+					<tr><td>3 Rings</td><td>–</td><td>27 Points</td></tr>
+					<tr><td>4 Rings</td><td>–</td><td>64 Points</td></tr>
+				</table>
+
+				<p>The game is over when there is no space left for a new brick in the center.</p>
+
+				<h3>On browsers</h3>
+				 This version of <em>Awesome Circle Tetris</em> was tested with Firefox 49, Chrome 53 and Opera. We recommend <a href="http://www.mozilla.com">Firefox</a>, though.
+
+				<h3>Authors</h3>
+				<p><a href="http://www.florianmeinel.de">Florian Meinel</a>, Sebastian Stock, <a href="http://en.wikipedia.org/wiki/Kurt_Lachmann">Kurt Lachmann</a>, Alexander Kirsche und Stefan Hoffmann.</p>
+
+				<p>&nbsp;</p>
+
+			</div>
+		</div>
+
+		<div id="highscores" class="popup">
+			<div class="popup-content">
+				<h2>Awesome Circle Tetris – High Scores</h2>
+				<img src="assets/loading.gif" id="highscores-loading" alt="Loading…" />
+				<table id="highscores-table">
+				</table>
+				<p>&nbsp;</p>
+			</div>
+		</div>
+
+		<div id="submit-highscore" class="popup">
+			<div class="popup-content">
+				<h2>Game Over! You made it to the high score list<span id="submit-highscore-currentScore"></span>!</h2>
+
+				<input id="submit-input" type="text" placeholder="Your name" name="submit-input" />
+				<button id="submit-button">Submit</button>
+				<img id="submitting" src="assets/loading.gif" alt="Submitting…" />
+			</div>
+		</div>
+
+
+	</body>
+
+</html>

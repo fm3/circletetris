@@ -1,0 +1,125 @@
+button {
+	box-shadow: 0 0 10pt rgba(0,0,0,0.3);
+	border-radius:3px 3px 3px 3px;
+	background-image: linear-gradient(#FFFFFF, #EFEFEF);
+	background-color: #F6F6F6;
+	border: 1px solid #BBBBBB;
+	cursor: pointer;
+	text-align: center;
+	vertical-align: middle;
+	font-size: 12pt;
+	outline: 0 none;
+
+	height: 3em;
+	width: 26vh;
+	margin: 1vh;
+}
+
+button:hover {
+	box-shadow: 0 0 4px rgba(0,0,0,0.3), 0 0 10pt rgba(0,0,0,0.3);
+	background-image: linear-gradient(#FFFFFF, #EBEBEB);
+	background-color: #F3F3F3;
+	border-color: #888888;
+}
+
+button:active, button:active:hover {
+	background-image:	linear-gradient(#CCCCCC, #DDDDDD);
+	background-color: #DDDDDD;
+	border-color:#888888;
+}
+
+button::-moz-focus-inner
+{
+	border:0;
+}
+
+button:disabled, button:disabled:hover, button:disabled:active, button:disabled:active:hover {
+	opacity: 0.5;
+	cursor: default;
+	box-shadow: 0 0 10pt rgba(0,0,0,0.3);
+	background-image: linear-gradient(#FFFFFF, #EFEFEF);
+	background-color: #F6F6F6;
+	border: 1px solid #BBBBBB;
+}
+
+#screenControls {
+	position: absolute;
+	bottom: 5vh;
+	right: 30pt;
+	width: 60vh;
+	text-align: center;
+}
+
+button#newGameButton {
+	font-weight: bold;
+}
+
+#arrowButtons {
+	margin-top: 1vh;
+}
+
+#arrowButtons button {
+	height: 16vh;
+	width: 16.5vh;
+	margin: 1vh;
+	font-size: 4vh;
+}
+
+.shortcut {
+	text-decoration: underline;
+}
+
+#scoreBox {
+	font-family: Pusab, webfont-pusab;
+	color: #fafafa;
+	text-shadow: 0 0 4pt black,0 0 30pt rgba(0,0,0,0.5);
+	position: absolute;
+	top: 14vh;
+	right: 5vh;
+	width: 55vh;
+	text-align: center;
+}
+
+#scoreBox #score {
+	font-size: 13vh;
+	display: block;
+	line-height: 1;
+}
+
+#scoreBox #scoreLabel {
+	font-size: 4vh;
+}
+
+@media all and (orientation:portrait) {
+	#scoreBox {
+		top: calc(85vmin);
+		width: 100%;
+		right: 0;
+	}
+
+	#scoreBox #score {
+		font-size: 15vmin;
+		display: inline-block;
+		padding-right: 0.3em;
+	}
+
+
+	#arrowButtons button {
+		height: 24vw;
+		width: 29vw;
+		margin: 1vw;
+		font-size: 4vw;
+	}
+
+	#screenControls {
+		left: 0;
+		bottom: 1vw;
+		width: 99vw;
+	}
+
+	button {
+		width: 45vw;
+		margin: 1vw;
+		height: 30pt;
+	}
+}

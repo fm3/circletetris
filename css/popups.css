@@ -1,0 +1,159 @@
+#popup-backdrop {
+	background: rgba(0,0,0,0.2);
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+
+#popup-close-button {
+	position:fixed;
+	top: calc(8% - 1.5em);
+	right: calc(20% - 1.5em);
+	z-index: 100;
+	width: 4em;
+	height: 4em;
+	border-radius: 2em;
+}
+
+.popup {
+	position: fixed;
+	top: 8%;
+	left: 20%;
+	right: 20%;
+	bottom: 8%;
+	background: #ffffff;
+	border-radius: 8pt;
+	box-shadow: 0 0 7pt rgba(0,0,0,0.75);
+	font-family: "Palatino Nova Pro", "Palatino Linotype", "Palatino LT Std", "Palatino", "Book Antiqua", "Georgia", serif;
+	line-height: 1.5em;
+}
+
+.popup-content {
+	position: absolute;
+	left: 10pt;
+	right: 10pt;
+	top: 10pt;
+	bottom: 10pt;
+	padding-top: 10pt;
+	padding-bottom: 140pt;
+	padding-right: 30pt;
+	padding-left: 30pt;
+	overflow: auto;
+}
+
+.popup.shown,
+.popupShown #popup-backdrop, .popupShown #popup-close-button,
+.popupShown #popup-blend-top, .popupShown #popup-blend-bottom {
+	visibility: visible;
+	opacity: 1;
+	pointer-events: auto;
+}
+
+.popup, #popup-backdrop, #popup-close-button, #popup-blend-top, #popup-blend-bottom {
+	visibility: hidden;
+	pointer-events: none;
+	opacity: 0;
+	transition: opacity 0.15s, visibility 0.15s;
+}
+
+#popup-backdrop {
+	transition: opacity 1s, visibility 1s!important;
+}
+
+#popup-blend-top {
+	position: fixed;
+	top: calc(8% + 10pt);
+	right: calc(20% + 40pt + 15pt);
+	left: calc(20% + 40pt);
+	height: 5vh;
+	background: linear-gradient(white, transparent);
+	z-index: 99;
+}
+
+#popup-blend-bottom {
+	position: fixed;
+	bottom: calc(8% + 10pt);
+	right: calc(20% + 20pt + 15pt);
+	left: calc(20% + 20pt);
+	height: 5vh;
+	background: rgba(255,0,0,0.2);
+	background: linear-gradient(transparent, white);
+	z-index: 99;
+}
+
+h2 {
+	text-align: center;
+	font-weight: normal;
+	font-style: italic;
+}
+
+h3 {
+	font-weight:bold;
+	font-style:italic;
+}
+
+#highscores-table {
+	margin: auto;
+}
+
+#highscores-table td {
+	padding-left: 15pt;
+	padding-top: 3pt;
+}
+
+#highscores-table td:nth-child(0n+2) {
+	width: 55%;
+}
+
+#highscores-table td:first-child {
+	text-align: center;
+	padding: 3pt 10pt;
+}
+
+#highscores-table tr:first-child td {
+	font-size: 18pt;
+}
+
+#highscores-table tr:nth-child(0n+2) td {
+	font-size: 16pt;
+}
+
+#highscores-table tr:nth-child(0n+3) td {
+	font-size: 14pt;
+}
+
+#highscores-table tr:first-child td:first-child {
+	background: url('../assets/goblet.svg');
+	width: 3cm;
+	height: 3cm;
+	background-size: 3cm;
+	font-size: 0;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+#highscores-table tr:nth-child(0n+2) td:first-child {
+	background: url('../assets/silvermedal.svg');
+	width: 3cm;
+	height: 1.5cm;
+	background-size: 1.5cm;
+	font-size: 0;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+#highscores-table tr:nth-child(0n+3) td:first-child {
+	background: url('../assets/bronzemedal.svg');
+	width: 3cm;
+	height: 1.2cm;
+	background-size: 1.2cm;
+	font-size: 0;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+#submitting {
+	display: none;
+}
